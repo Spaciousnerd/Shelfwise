@@ -11,7 +11,12 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 //middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://shelfwise-lib.onrender.com"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(errorHandler);
 
