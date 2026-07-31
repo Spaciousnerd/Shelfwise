@@ -177,13 +177,11 @@ export const getUsers = asyncHandler(async (req, res) => {
     isVerified: true,
     isProfileComplete: true,
   }).select("-password");
-  res.status(200).json(
-    {
-      success: true,
-      message: "Fetched user data successfully",
-    },
+  res.status(200).json({
+    success: true,
+    message: "Fetched user data successfully",
     users,
-  );
+  });
 });
 // for admin registration
 export const registerAdmin = asyncHandler(async (req, res) => {
