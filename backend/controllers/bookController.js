@@ -132,7 +132,7 @@ export const clearFine = asyncHandler(async (req, res) => {
     fineCleared: true,
     clearedFineAmount: calculateFine(issue, issue.fineRate, issue.fineInterval),
   });
-  await issue.save();
+  await issue.save();9
   res.status(200).json({
     success: true,
     message: "Fine cleared",
